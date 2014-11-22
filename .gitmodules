@@ -1,0 +1,3 @@
+[submodule "u3d/Assets/Scripts/core"]
+	path = u3d/Assets/Scripts/core
+	url = https://github.com/luzexi/Unity3DNetwork-http.git
