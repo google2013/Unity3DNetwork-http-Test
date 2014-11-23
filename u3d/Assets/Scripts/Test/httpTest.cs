@@ -15,6 +15,11 @@ public class httpTest : MonoBehaviour {
 	void Start ()
 	{
 		session = new HTTPSession("http://goshit.luzexi.com/index.php/");
+		session.onDataError = showError;
+		Hashtable head = new Hashtable();
+		head["cookie"] = "ok123";
+		head["token"] = "123";
+		session.m_cHeader = head;
 
 		TestReq req = new TestReq();
 		req.arg1 = "1";
@@ -27,6 +32,11 @@ public class httpTest : MonoBehaviour {
 			Debug.Log("password : " + ack.data.password);
 			Debug.Log(" token : " + ack.data.token);
 		});
+	}
+
+	private void showError(string error , System.Action resendAction, System.Action noAction)
+	{
+		Debug.Log("error : " + error);
 	}
 	
 	// Update is called once per frame
