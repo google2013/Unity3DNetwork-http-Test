@@ -34,7 +34,7 @@ public class httpTest : MonoBehaviour {
 		});
 	}
 
-	private void showError(string error , System.Action resendAction, System.Action noAction)
+	private void showError(string error , System.Action resendAction, System.Action closeAction)
 	{
 		Debug.Log("error : " + error);
 	}
